@@ -1,0 +1,38 @@
+body {
+    /* text-align: center; */
+}
+
+.rowWrap {
+    text-align: center;
+    margin: 5px;
+}
+
+.rowElement {
+    display: inline-block;
+    background-color: lightblue;
+    width: 600px;
+    position: center;
+}
+
+.leftSide {
+    width: 490px;
+    display: inline-block;
+    background-color: lightpink;
+}
+
+.rightSide {
+    width: 100px;
+    display: inline-block;
+    background-color: lavender;
+}
+
+.buttonContainer {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: lightcoral
+}
+
+#crystals {
+    /* text-align: justify; */
+}
