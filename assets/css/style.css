@@ -30,9 +30,18 @@ body {
     width: 100px;
     height: 100px;
     display: inline-block;
-    background-color: lightcoral
+    background-color: whitesmoke;
+    cursor: pointer;
+
 }
 
 #crystals {
     /* text-align: justify; */
+}
+
+.buttonContainer a {
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    background-color: lightgreen;
 }
