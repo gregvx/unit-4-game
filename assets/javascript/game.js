@@ -13,7 +13,7 @@ $('#crystal4').click(function() {
 });
 
 //global variables
-var gameStarted = false;
+var gamePlayStarted = false;
 var wins= 0;
 var losses = 0;
 var wallet = 0;
@@ -22,27 +22,34 @@ var gemValues = [0,0,0,0];
 //this main function gets called when user clicks on a gem. a paramater x is passed in corresponding to
 //the index of the gem clicked.
 function gemClicked(x) {
-    if (gameStarted === false) {
-        startGame();
+    if (gamePlayStarted === false) {
+        gamePlayStarted = true;
+        startRound();
     }
     else {
         pickGem(x);
     }
 }
 
-function startGame() {
+function startRound() {
     //TODO figure out new gem values
     gemValues = [1,12,3,30];
     //TODO figure out new taget;
     target = 12;
     //update display to show target
     $('#goalDisplay').html(target);
+    //initialize wallet
     wallet = 0;
     //update display to show wallet
-    $('#currentDispaly').html(wallet);
-    gameStarted = true;
+    $('#currentDisplay').html(wallet);
+    setTimeout(startRoundDialog, 500);
+}
+
+//notify user round has begun
+function startRoundDialog() {
     alert("You have started a new game. Try to collect exactly " + target + " points.");
 }
+
 
 function pickGem(x) {
     wallet = wallet + gemValues[x];
@@ -54,7 +61,7 @@ function pickGem(x) {
         winRound();
     }
     else if (wallet > target) {
-        loseRound();
+        setTimeout(loseRound,500);
     }
 }
 
@@ -63,14 +70,15 @@ function winRound() {
     alert("You won!");
     // update display to show score
     $('#score').html("<p>Wins: " + wins + " Losses: " + losses + "</p>");
-    startGame();
+    startRound();
 
 }
 
 function loseRound() {
     losses++;
     alert("you lost. Better luck next time...");
+    
     // update display to show more
     $('#score').html("<p>Wins: " + wins + " Losses: " + losses + "</p>");
-    startGame();
+    startRound();
 }
