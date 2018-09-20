@@ -32,9 +32,9 @@ function gemClicked(x) {
 }
 
 function startRound() {
-    //TODO figure out new gem values
-    gemValues = [1,12,3,30];
-    //TODO figure out new taget;
+    setGemValues();
+    
+    //TODO figure out new taget between 19 and 120;
     target = 12;
     //update display to show target
     $('#goalDisplay').html(target);
@@ -58,7 +58,7 @@ function pickGem(x) {
     $('#currentDisplay').html(wallet);
     // alert("sub called. Gem clicked is worth " + gemValues[x] + " points.");
     if (wallet === target) {
-        winRound();
+        setTimeout(winRound,500);
     }
     else if (wallet > target) {
         setTimeout(loseRound,500);
@@ -81,4 +81,22 @@ function loseRound() {
     // update display to show more
     $('#score').html("<p>Wins: " + wins + " Losses: " + losses + "</p>");
     startRound();
+}
+
+function setGemValues() {
+    //figure out new gem values between 1 and 12
+    gemValues = [];
+    for(var i=0; i<4; i++) {
+        var originalValueFound = false;
+        while (originalValueFound === false) {
+            var newValue = Math.floor(Math.random() * 12) + 1;
+            console.log("generated a rand value of: " + newValue);
+            if (!gemValues.includes(newValue)) {
+                //note the !
+                gemValues.push(newValue);
+                console.log("the array is now: " + gemValues);
+                originalValueFound = true;
+            }
+        }
+    }
 }
