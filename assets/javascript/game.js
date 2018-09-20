@@ -33,9 +33,8 @@ function gemClicked(x) {
 
 function startRound() {
     setGemValues();
+    setTarget();
     
-    //TODO figure out new taget between 19 and 120;
-    target = 12;
     //update display to show target
     $('#goalDisplay').html(target);
     //initialize wallet
@@ -90,13 +89,21 @@ function setGemValues() {
         var originalValueFound = false;
         while (originalValueFound === false) {
             var newValue = Math.floor(Math.random() * 12) + 1;
-            console.log("generated a rand value of: " + newValue);
+            // console.log("generated a rand value of: " + newValue);
             if (!gemValues.includes(newValue)) {
                 //note the !
                 gemValues.push(newValue);
-                console.log("the array is now: " + gemValues);
+                // console.log("the array is now: " + gemValues);
                 originalValueFound = true;
             }
         }
     }
+}
+
+function setTarget() {
+    //figure out new target between 19 and 120;
+    target = Math.floor(Math.random()*102)+19;
+    //consider: how could I code this to ensure the number is sum of some
+    //or all the values in the array gemValues?
+    
 }

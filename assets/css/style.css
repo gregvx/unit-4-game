@@ -1,10 +1,23 @@
 body {
-    /* text-align: center; */
+    font-family: 'VT323', monospace;
+font-family: 'Righteous', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Kalam', cursive;
+}
+
+#title {
+    font-family: 'VT323', monospace;
+    font-family: 'Righteous', cursive;
+    font-family: 'Merienda', cursive;
+    font-size: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .rowWrap {
     text-align: center;
-    margin: 5px;
+    /* margin: 5px; */
+    
 }
 
 .rowElement {
@@ -12,18 +25,42 @@ body {
     background-color: lightblue;
     width: 600px;
     position: center;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .leftSide {
     width: 490px;
     display: inline-block;
-    background-color: lightpink;
+    text-align: right;
+}
+
+#goalDisplay {
+    /* line-height: 200px; */
+    /* display: table; */
+    /* padding: 1% 0; */
+}
+
+.rightSideContents {
+    /* display: table-cell; */
+    /* vertical-align: center; */
+    /* display: inline-block; */
+    /* padding: 2% 0; */
+}
+
+#goal {
+    /* line-height: 200px; */
 }
 
 .rightSide {
     width: 100px;
     display: inline-block;
     background-color: lavender;
+    /* vertical-align: center; */
+    /* line-height: 200px; */
 }
 
 .buttonContainer {
